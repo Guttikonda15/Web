@@ -3,4 +3,4 @@ Registration - Firstname,Lastname,Username,Password and check box for registerin
 Home - Used flex for images and Navigation bar for navigating to login and registration.
 Note - used for taking notes.
 
-[![ERD DIAGRAM](/public/images/ER-Diagram.png)]
+[![ERD DIAGRAM](./public/images/ER-Diagram.png)]
