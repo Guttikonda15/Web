@@ -4,7 +4,7 @@ const con = require("./db_connect");
   async function createTable() {
     let sql=`CREATE TABLE IF NOT EXISTS notes (
       noteID INT NOT NULL AUTO_INCREMENT,
-      notecontent VARCHAR(255) NOT NULL,
+      notedescription VARCHAR(255) NOT NULL,
       userID INT NOT NULL,
       CONSTRAINT note_pl PRIMARY KEY(noteID),
       CONSTRAINT note_fk FOREIGN KEY(userID) REFERENCES users(userID)
@@ -31,9 +31,9 @@ const con = require("./db_connect");
     
   }
   
-  async function createnote(note){
+  async function creatingnote(note){
   
-    let sql=`INSERT INTO notes (userID,notecontent) VALUES ("${note.userID}", "${note.notecontent}");`
+    let sql=`INSERT INTO notes (userID,notedescription) VALUES ("${note.userID}", "${note.notedescription}");`
   
   let data=await con.query(sql);
   
@@ -42,14 +42,14 @@ const con = require("./db_connect");
   
   }
   
-  async function deletenote(note){
+  async function deletingnote(note){
     let sql=`DELETE FROM notes where userID="${note.userID}"`;
   
     return await con.query(sql);
   }
-  async function editnote(note) {
+  async function editingnote(note) {
     let sql = `UPDATE notes 
-      SET notecontent = "${note.notecontent}"
+      SET notedescription = "${note.notedescription}"
       WHERE noteID = ${note.noteID}
     `;
     
@@ -60,4 +60,4 @@ const con = require("./db_connect");
   
   
   // createnote(notedata[0])
-  module.exports = {getallnotes,getnote,createnote,deletenote,editnote};
+  module.exports = {getallnotes,getnote,creatingnote,deletingnote,editingnote};

@@ -11,9 +11,9 @@ router
     }
   })
 
-  .post('/createnote', async (req, res) => {
+  .post('/creatingnote', async (req, res) => {
     try {
-      let notecreates = await User.createnote(req.body);
+      let notecreates = await User.creatingnote(req.body);
       res.send(notecreates)
     } catch(err) {
       res.status(401).send({message: err.message});
@@ -21,17 +21,17 @@ router
   })
   
 
-  .post('/deletenote', async (req, res) => {
+  .post('/deletingnote', async (req, res) => {
     try {
-      let noteupdates = await User.deletenote(req.body);
+      let noteupdates = await User.deletingnote(req.body);
       res.send(noteupdates)
     } catch(err) {
       res.status(401).send({message: err.message});
     }
   })
-  .post('/editnote', async (req, res) => {
+  .post('/editingnote', async (req, res) => {
     try {
-      let noteedit= await User.editnote(req.body);
+      let noteedit= await User.editingnote(req.body);
       res.send(noteedit)
     } catch(err) {
       res.status(401).send({message: err.message});

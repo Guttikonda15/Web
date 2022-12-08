@@ -48,7 +48,7 @@ async function register(user) {
   let cUser = await getUser(user);
   if(cUser.length > 0) throw Error("Username already in use");
 
-  const sql = `INSERT INTO users (firstname,lastname,email,password)
+  const sql = `INSERT INTO users (firstname,lastname,Username,password)
     VALUES ("${user.Firstname}","${user.Lastname}","${user.Username}","${user.Password}")
   `
   await con.query(sql);
@@ -69,7 +69,7 @@ async function login(user) { // {userName: "sda", password: "gsdhjsga"}
 // Update User function
 async function editUser(user) {
   let sql = `UPDATE users 
-    SET email = "${user.Username}"
+    SET  Username = "${user.Username}"
     WHERE userID = ${user.userID}
   `;
 
@@ -98,7 +98,7 @@ async function getUser(user) {
   } else {
     sql = `
     SELECT * FROM users 
-      WHERE email = "${user.Username}"
+      WHERE Username = "${user.Username}"
   `;
   }
   return await con.query(sql);  
