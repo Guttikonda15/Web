@@ -12,23 +12,24 @@
       <form id="register-Form" action="action_page.php">
         <div class="container">
           <h1>Register</h1>
-          <ul>
-            <li><a href="./login.html"></a>Login</li>
-            <li><a href="./HomePage.html"></a>Home</li>
-          </ul>
+          <nav>
+            <a href="login.html">Login</a>
+            <a href="HomePage.html">Home</a>
+            <a href="note.html">Note</a>
+          </nav>
 
           <label for="fname">Firstname:</label>
-          <input type="text" id="fname" name="fname" />
+          <input type="text" id="Firstname" name="fname" />
           <br /><br />
 
           <label for="lname">Lastname:</label>
-          <input type="text" id="lname" name="lname" />
+          <input type="text" id="Lastname" name="lname" />
           <br /><br />
           <label for="username">Username:</label>
-          <input type="text" id="email" name="username" />
+          <input type="text" id="Username" name="username" />
           <br /><br />
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" />
+          <input type="password" id="Password" name="password" />
           <br /><br />
           <input type="checkbox" class="check-box" /><span>I Agree</span>
           <br /><br />
@@ -46,6 +47,7 @@
       <div class="B4"></div>
       <div class="B5"></div>
     </section>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="fetch.js"></script>
   </body>
 </html>

@@ -48,7 +48,7 @@ async function register(user) {
   let cUser = await getUser(user);
   if(cUser.length > 0) throw Error("Username already in use");
 
-  const sql = `INSERT INTO users (firstname,lastname,Username,password)
+  const sql = `INSERT INTO users (Firstname,Lastname,Username,Password)
     VALUES ("${user.Firstname}","${user.Lastname}","${user.Username}","${user.Password}")
   `
   await con.query(sql);
